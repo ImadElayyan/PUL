@@ -9,10 +9,25 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 
+# pool:
+#   name: 'WebApp'
+#   demands:
+#   - TargetApp -equals CRM
+
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+
+parameters:
+  - name: enivironmentName
+    default: dev
+    displayName: Env. Name
+    type: string
+    values:
+      - Dev
+      - Sit
+      - Prod
 
 steps:
 - task: NuGetToolInstaller@0
