@@ -21,7 +21,7 @@ variables:
 
 parameters:
   - name: enivironmentName
-    default: dev
+    default: Dev
     displayName: Env. Name
     type: string
     values:
